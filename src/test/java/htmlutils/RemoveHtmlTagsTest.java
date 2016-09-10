@@ -27,4 +27,10 @@ public class RemoveHtmlTagsTest {
         String src = "<p> <span> foo </span> <em> bar <a> foobar </a> baz </em> </p>";
         assertThat(testee.removeTags(src)).isEqualTo("foo bar foobar baz");
     }
+    @Test
+    public void LIUL() {
+        String src = "  <li><a href=/book/pl/v1/Podstawy-Gita-Pierwsze-repozytorium-Gita>Pierwsze repozytorium Gita</a>\n" +
+                "          </li>";
+        assertThat(testee.removeTags(src)).isEqualTo("Pierwsze repozytorium Gita");
+    }
 }
